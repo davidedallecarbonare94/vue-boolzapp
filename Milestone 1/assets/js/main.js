@@ -91,5 +91,6 @@ let whatsapp = new Vue({
                 ],
             },
         ]
-    }
+    },
+    
 })

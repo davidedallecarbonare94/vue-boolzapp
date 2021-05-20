@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Boolzapp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -16,7 +18,7 @@
 
 <body>
     <div id="root">
-        <div class="container">
+        <div class="container_sidebar">
 
             <section class="sidebar">
                 <!-- sidebar laterale con contatti -->
@@ -45,30 +47,52 @@
                             <div class="searchbar_border">
                                 <i class="fas fa-search"></i>
                                 <input type="text" placeholder="Cerca o inizia una nuova chat">
-
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="down_sidebar">
                     <!-- lista contatti -->
+                    <div class="contact_names d_flex" v-for="(contact, index) in contacts">
+                        <img class="user_logo " :src="'./assets/img/avatar' + contacts[index].avatar + '.jpg'"
+                            alt="avatar">
+                        <div class="contacts_list">
+                            <p>{{contacts[index].name}}</p>
+                        </div>
+                    </div>
 
                 </div>
             </section>
-            <main>
-                <div class="chat_section">
-                    <div class="contact_name">
 
+        </div>
+
+        <main>
+            <div class="chat_section">
+                <div class="active_contact">
+                    <div class="media">
+                        <img class="user_logo" src="./assets/img/avatar_1.jpg" alt="">
+                        <div class="media-body">
+                            <h5 class="mb-0">Michele</h5>
+                            <p class="mb-0">Ultimo accesso alle: </p>
+                        </div>
                     </div>
+                    <div class="active_user_icons">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>    
                     <div class="chat">
 
                     </div>
                     <div class="input_chat_bar">
-
+                        <i class="far fa-smile"></i>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <i class="fas fa-microphone"></i>
                     </div>
-                </div>
-            </main>
-        </div>
+                
+        </main>
+    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="./assets/js/main.js"></script>
