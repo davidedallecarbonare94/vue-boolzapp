@@ -1,0 +1,39 @@
+/* Common Rules */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#root{
+    background-color: lightgray;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Sidebar Section */
+.sidebar{
+    background-color: white;
+    width: 300px;
+    
+}
+.top_sidebar{
+    background-color: lightseagreen;
+    height: 100px;
+}
+.central_sidebar{
+    background-color: rgb(23, 117, 113);
+    height: 150px;
+}
+.down_sidebar{
+    background-color: rgb(12, 58, 56);
+    height: 450px;
+}
+/* Main Section */
+.chat_section{
+    width: 400px;
+    background-color: red;
+}
+.contact_name{
+    height: 100px;
+}
