@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 #root{
-    background-color: lightgray;
+    background: linear-gradient(180deg, #009688 19.65%, #DCDBD2 19.65%);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@
 }
 .down_sidebar{
     background-color: rgb(255, 255, 255);
-    height: 450px;
+    height: 440px;
 }
 /* Main Section */
 .chat_section{
@@ -71,6 +71,19 @@
     background-color: rgba(243, 238, 234, 1);
     justify-content: space-around;
     align-items: center;
+    padding: 10px;
+}
+.input_chat_bar i{
+    font-size: 2rem;
+    color: rgba(107, 115, 118, 1);
+}
+.input_chat_bar input{
+    width: 80%;
+    border-radius: 10px;
+    height: 70px;
+    border: none;
+    padding: 10px;
+    
 }
 /* Logos */
 .user_logo{
@@ -98,19 +111,22 @@
     background-color: rgba(142, 218, 252, 1);
     color: white;
     align-content: stretch;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: stretch;
     flex-direction: row;
+    padding: 10px;
 }
 .notification i{
     background-color: white;
     color: rgba(142, 218, 252, 1);
     border-radius: 50%;
-    font-size: 3rem;
+    font-size: 1.5rem;
+    padding: 10px;
 }
 .notification p,
 .notification a{
     font-size: 0.75rem;
+    padding-left: 10px;
 }
 /* searchbar */
 .searchbar_border{
@@ -141,8 +157,10 @@
     align-items: flex-start;
     background-color: rgb(255, 255, 255);
     padding: 20px 10px;
+    border-bottom: 1px solid grey;
 }
 .contacts_list p{
     padding-left: 10px;
     font-size: 1rem;
+    
 }

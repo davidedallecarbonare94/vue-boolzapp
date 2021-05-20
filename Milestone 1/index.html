@@ -18,6 +18,7 @@
 
 <body>
     <div id="root">
+        
         <div class="container_sidebar">
 
             <section class="sidebar">
@@ -37,11 +38,15 @@
                 </div>
                 <div class="central_sidebar">
                     <!-- ricezione notifiche + barra di ricerca -->
-                    <div class="notifications">
+                    <div class="notifications" style="width: 100%;">
                         <div class="notification">
-                            <i class="fas fa-bell-slash bell"></i>
-                            <p>Ricevi notifiche di nuovi messaggi</p>
-                            <a>Avvia notifiche desktop</a>
+                            <div class="media">
+                                <i class="fas fa-bell-slash bell"></i>
+                                <div class="media-body">
+                                    <p class="mb-0">Ricevi notifiche di nuovi messaggi</p>
+                                    <a href="#">Avvia notifiche desktop</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="search_bar">
                             <div class="searchbar_border">
@@ -54,7 +59,7 @@
                 <div class="down_sidebar">
                     <!-- lista contatti -->
                     <div class="contact_names d_flex" v-for="(contact, index) in contacts">
-                        <img class="user_logo " :src="'./assets/img/avatar' + contacts[index].avatar + '.jpg'"
+                        <img class="user_logo" :src="'./assets/img/avatar' + contacts[index].avatar + '.jpg'"
                             alt="avatar">
                         <div class="contacts_list">
                             <p>{{contacts[index].name}}</p>
@@ -71,7 +76,7 @@
                 <div class="active_contact">
                     <div class="media">
                         <img class="user_logo" src="./assets/img/avatar_1.jpg" alt="">
-                        <div class="media-body">
+                        <div class="media-body pl-2">
                             <h5 class="mb-0">Michele</h5>
                             <p class="mb-0">Ultimo accesso alle: </p>
                         </div>
