@@ -92,5 +92,9 @@ let whatsapp = new Vue({
             },
         ]
     },
+    methods: {
+        //selezione colori in base al mittente
+        
+    },
     
 })
