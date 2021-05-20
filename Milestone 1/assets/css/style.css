@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 /* Sidebar Section */
 .sidebar{
@@ -22,8 +23,12 @@
     
 }
 .top_sidebar{
-    background-color: lightseagreen;
+    display: flex;
+    background-color: rgba(234, 234, 234, 1);
     height: 100px;
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: center;
 }
 .central_sidebar{
     background-color: rgb(23, 117, 113);
@@ -52,4 +57,65 @@
 .input_chat_bar{
     height: 125px;
     background-color: rgb(59, 1, 1);
+}
+/* Logos */
+.user_logo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.user_icons i{
+    color: rgba(177, 177, 177, 1);
+    padding-right: 10px;
+    font-size: 1.5rem;
+}
+.user_info{
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+    font-weight: 400;
+    padding-left: 10px;
+}
+/* Notifications section */
+.notification{
+    display: flex;
+    background-color: rgba(142, 218, 252, 1);
+    color: white;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-direction: row;
+}
+.notification i{
+    background-color: white;
+    color: rgba(142, 218, 252, 1);
+    border-radius: 50%;
+    font-size: 3rem;
+}
+.notification p,
+.notification a{
+    font-size: 0.75rem;
+}
+/* searchbar */
+.searchbar_border{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    padding: 8px;
+    border-radius: 5px;
+}
+.search_bar i{
+    color: rgba(177, 177, 177, 1);
+    padding-right: 10px;
+
+}
+.search_bar input {
+    width: 80%;
+    border: none;
+}
+.search_bar{
+    padding: 10px;
+    background-color: rgba(234, 234, 234, 1);
+    border: 1px solid rgba(128, 128, 128, 0.5)
 }
