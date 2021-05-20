@@ -15,6 +15,10 @@
 .sidebar{
     background-color: white;
     width: 300px;
+    position: fixed;
+    top: 50px;
+    left: 400px;
+    
     
 }
 .top_sidebar{
@@ -31,9 +35,21 @@
 }
 /* Main Section */
 .chat_section{
-    width: 400px;
-    background-color: red;
+    height: 700px;
+    width: 800px;
+    position: fixed;
+    top: 50px;
+    left: 700px
 }
 .contact_name{
     height: 100px;
+    background-color: rgb(202, 10, 10);
+}
+.chat{
+    height: 475px;
+    background-color: rgb(139, 3, 3);
+}
+.input_chat_bar{
+    height: 125px;
+    background-color: rgb(59, 1, 1);
 }
