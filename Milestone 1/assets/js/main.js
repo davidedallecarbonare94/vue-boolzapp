@@ -6,6 +6,7 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visua
 let whatsapp = new Vue({
     el: "#root",
     data: {
+        counter: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -93,7 +94,11 @@ let whatsapp = new Vue({
         ]
     },
     methods: {
-        //selezione colori in base al mittente
+        //selezione chat in base all'utente
+        selectUser(index) {
+            console.log("ecco chi hai cliccato" + [index]);
+            return this.counter = index
+        }
         
     },
     

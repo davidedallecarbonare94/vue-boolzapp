@@ -58,10 +58,10 @@
                 </div>
                 <div class="down_sidebar">
                     <!-- lista contatti -->
-                    <div class="contact_names d_flex" v-for="(contact, index) in contacts">
+                    <div class="contact_names d_flex" v-for="(contact, index) in contacts" @click="selectUser(index)" :class="counter === index ? 'active' : '' ">
                         <img class="user_logo" :src="'./assets/img/avatar' + contacts[index].avatar + '.jpg'"
                             alt="avatar">
-                        <div class="contacts_list">
+                        <div class="contacts_list"  >
                             <p>{{contacts[index].name}}</p>
                         </div>
                     </div>
@@ -73,11 +73,11 @@
 
         <main>
             <div class="chat_section">
-                <div class="active_contact">
+                <div class="active_contact" >
                     <div class="media">
-                        <img class="user_logo" src="./assets/img/avatar_1.jpg" alt="">
+                        <img class="user_logo" :src="'./assets/img/avatar' + contacts[counter].avatar + '.jpg'" alt="">
                         <div class="media-body pl-2">
-                            <h5 class="mb-0">Michele</h5>
+                            <h5 class="mb-0">{{ contacts[counter].name }}</h5>
                             <p class="mb-0">Ultimo accesso alle: </p>
                         </div>
                     </div>
