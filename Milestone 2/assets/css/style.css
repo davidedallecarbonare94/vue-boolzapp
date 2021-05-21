@@ -166,3 +166,15 @@
     font-size: 1rem;
     
 }
+/* chat section */
+.messages{
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.sent{
+    background-color: rgba(213, 249, 186, 1);
+}
+.received{
+    background-color: white;
+}

@@ -88,9 +88,10 @@
                     </div>
                 </div>    
                     <div class="chats" >
-                        <div class="chat" @click="selectUser(index)">
-                            <p class="messages">{{contacts[counter].messages}}</p>
-                            <p class="dates">{{contacts[counter].date}}</p>
+                        <div class="chat">
+                            <p class="messages" v-for="message in contacts[counter].messages">
+                                {{ message.text }} {{ message.date }}</p>
+                            
                         </div>
                     </div>
                     <div class="input_chat_bar">
