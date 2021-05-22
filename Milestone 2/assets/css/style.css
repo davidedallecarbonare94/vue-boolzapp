@@ -169,16 +169,33 @@
 /* chat section */
 .sent{
     background-color: rgba(213, 249, 186, 1);
+    align-self: flex-end;
+    margin-top: 20px;
+    margin-right: 80px;
+    margin-bottom: 30px;
 }
 .received{
     background-color: white;
+    align-self: flex-start;
+    margin-left: 90px;
+    margin-bottom: 30px;
+
 }
 .message{
     font-size: 0.80rem;
 }
 .date{
     font-size: 0.6rem;
+    align-self: flex-end;
+    
 }
 .actual_chat{
-    padding-bottom: 1rem;
+    padding: 5px 8px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.chat{
+    display: flex;
+    flex-direction: column;
 }
