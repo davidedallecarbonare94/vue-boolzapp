@@ -8,13 +8,11 @@ let whatsapp = new Vue({
     data: {
         counter: 0,
         myMessages: '',
-        contacts: [
-            {
+        contacts: [{
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '10/01/2020 15:30:55',
                         text: 'Hai portato a spasso il cane?',
                         status: 'sent'
@@ -35,8 +33,7 @@ let whatsapp = new Vue({
                 name: 'Fabio',
                 avatar: '_2',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '20/03/2020 16:30:00',
                         text: 'Ciao come stai?',
                         status: 'sent'
@@ -57,8 +54,7 @@ let whatsapp = new Vue({
                 name: 'Samuele',
                 avatar: '_3',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '28/03/2020 10:10:40',
                         text: 'La Marianna va in campagna',
                         status: 'received'
@@ -79,8 +75,7 @@ let whatsapp = new Vue({
                 name: 'Luisa',
                 avatar: '_4',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '10/01/2020 15:30:55',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
                         status: 'sent'
@@ -111,19 +106,23 @@ let whatsapp = new Vue({
             var fullDate = `${day}/${month}/${year} ${hour}:${minutes}:${seconds}`;
             return fullDate;
         },
-        //invio del messaggio da input
+        //invio del messaggio da input con inserimento tramite enter
         addMessage(counter) {
-            this.contacts[counter].messages.push(
-                {
-                    date: this.actualTime(),
-                    text: this.myMessages,
-                    status: 'sent',
-                },
-            );
+            this.contacts[counter].messages.push({
+                date: this.actualTime(),
+                text: this.myMessages,
+                status: 'sent',
+            }, );
             this.myMessages = "";
-            ;
-        }, 
-        
+            setTimeout(() => {
+                this.contacts[counter].messages.push({
+                    date: this.actualTime(),
+                    text: "Ok!",
+                    status: 'received',
+                }, );
+            }, 1000)
+
+        },
     },
-    
+
 })
