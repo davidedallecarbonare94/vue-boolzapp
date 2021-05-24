@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <div class="chats">
-                        <div class="chat">
+                        <div class="chat" id="chat">
                             <div class="actual_chat" v-for="message in contacts[counter].messages" :class="message.status == 'sent' ? 'sent' : 'received'">
                                 <p class="message mb-0">{{ message.text }}</p>  
                                 <p class="date mb-0">{{ message.date }}</p>  
@@ -99,7 +99,8 @@
                     </div>
                     <div class="input_chat_bar">
                         <i class="far fa-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" v-model="myMessages" @keyup.enter="addMessage(counter)" placeholder="Scrivi un messaggio">
+
                         <i class="fas fa-microphone"></i>
                     </div>
     

@@ -7,6 +7,7 @@ let whatsapp = new Vue({
     el: "#root",
     data: {
         counter: 0,
+        myMessages: '',
         contacts: [
             {
                 name: 'Michele',
@@ -97,7 +98,19 @@ let whatsapp = new Vue({
         //selezione chat in base all'utente
         selectUser(index) {
             return this.counter = index
-        }
+        },
+        //invio del messaggio da input
+        addMessage(counter) {
+            this.contacts[counter].messages.push(
+                {
+                    date: '10/01/2020 15:50:00',
+                    text: this.myMessages,
+                    status: 'sent',
+                },
+            );
+            this.myMessages = "";
+            ;
+        }, 
         
     },
     
