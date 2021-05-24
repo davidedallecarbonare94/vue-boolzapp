@@ -99,11 +99,23 @@ let whatsapp = new Vue({
         selectUser(index) {
             return this.counter = index
         },
+        //funzione per data attuale
+        actualTime: function () {
+            var d = new Date();
+            var day = d.getDate();
+            var month = d.getMonth();
+            var year = d.getFullYear();
+            var hour = d.getHours();
+            var minutes = d.getMinutes();
+            var seconds = d.getSeconds()
+            var fullDate = `${day}/${month}/${year} ${hour}:${minutes}:${seconds}`;
+            return fullDate;
+        },
         //invio del messaggio da input
         addMessage(counter) {
             this.contacts[counter].messages.push(
                 {
-                    date: '10/01/2020 15:50:00',
+                    date: this.actualTime(),
                     text: this.myMessages,
                     status: 'sent',
                 },
