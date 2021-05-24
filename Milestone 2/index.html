@@ -18,93 +18,95 @@
 
 <body>
     <div id="root">
+        <div class="general_container">
 
-        <div class="container_sidebar">
-
-            <section class="sidebar">
-                <!-- sidebar laterale con contatti -->
-                <div class="top_sidebar">
-                    <!-- dati utente -->
-                    <div class="user_info">
-                        <img class="user_logo" src="./assets/img/avatar_io.jpg" alt="">
-                        <p>My Name</p>
-
+            <div class="container_sidebar">
+    
+                <section class="sidebar">
+                    <!-- sidebar laterale con contatti -->
+                    <div class="top_sidebar">
+                        <!-- dati utente -->
+                        <div class="user_info">
+                            <img class="user_logo" src="./assets/img/avatar_io.jpg" alt="">
+                            <p>My Name</p>
+    
+                        </div>
+                        <div class="user_icons">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </div>
-                    <div class="user_icons">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                </div>
-                <div class="central_sidebar">
-                    <!-- ricezione notifiche + barra di ricerca -->
-                    <div class="notifications" style="width: 100%;">
-                        <div class="notification">
-                            <div class="media">
-                                <i class="fas fa-bell-slash bell"></i>
-                                <div class="media-body">
-                                    <p class="mb-0">Ricevi notifiche di nuovi messaggi</p>
-                                    <a href="#">Avvia notifiche desktop</a>
+                    <div class="central_sidebar">
+                        <!-- ricezione notifiche + barra di ricerca -->
+                        <div class="notifications" style="width: 100%;">
+                            <div class="notification">
+                                <div class="media">
+                                    <i class="fas fa-bell-slash bell"></i>
+                                    <div class="media-body">
+                                        <p class="mb-0">Ricevi notifiche di nuovi messaggi</p>
+                                        <a href="#">Avvia notifiche desktop</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search_bar">
+                                <div class="searchbar_border">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" placeholder="Cerca o inizia una nuova chat">
                                 </div>
                             </div>
                         </div>
-                        <div class="search_bar">
-                            <div class="searchbar_border">
-                                <i class="fas fa-search"></i>
-                                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    <div class="down_sidebar">
+                        <!-- lista contatti -->
+                        <div class="contact_names d_flex" v-for="(contact, index) in contacts" @click="selectUser(index)"
+                            :class="counter === index ? 'active' : '' ">
+                            <img class="user_logo" :src="'./assets/img/avatar' + contacts[index].avatar + '.jpg'"
+                                alt="avatar">
+                            <div class="contacts_list">
+                                <p>{{contacts[index].name}}</p>
+                            </div>
+                        </div>
+    
+                    </div>
+                </section>
+    
+            </div>
+    
+            <main>
+                <div class="chat_section">
+                    <div class="active_contact">
+                        <div class="media">
+                            <img class="user_logo" :src="'./assets/img/avatar' + contacts[counter].avatar + '.jpg'" alt="">
+                            <div class="media-body pl-2">
+                                <h5 class="mb-0">{{ contacts[counter].name }}</h5>
+                                <p class="mb-0">Ultimo accesso alle: </p>
+                            </div>
+                        </div>
+                        <div class="active_user_icons">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <div class="chats">
+                        <div class="chat">
+                            <div class="actual_chat" v-for="message in contacts[counter].messages" :class="message.status == 'sent' ? 'sent' : 'received'">
+                                <p class="message mb-0">{{ message.text }}</p>  
+                                <p class="date mb-0">{{ message.date }}</p>  
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="down_sidebar">
-                    <!-- lista contatti -->
-                    <div class="contact_names d_flex" v-for="(contact, index) in contacts" @click="selectUser(index)"
-                        :class="counter === index ? 'active' : '' ">
-                        <img class="user_logo" :src="'./assets/img/avatar' + contacts[index].avatar + '.jpg'"
-                            alt="avatar">
-                        <div class="contacts_list">
-                            <p>{{contacts[index].name}}</p>
-                        </div>
+                    <div class="input_chat_bar">
+                        <i class="far fa-smile"></i>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <i class="fas fa-microphone"></i>
                     </div>
-
-                </div>
-            </section>
-
+    
+            </main>
         </div>
-
-        <main>
-            <div class="chat_section">
-                <div class="active_contact">
-                    <div class="media">
-                        <img class="user_logo" :src="'./assets/img/avatar' + contacts[counter].avatar + '.jpg'" alt="">
-                        <div class="media-body pl-2">
-                            <h5 class="mb-0">{{ contacts[counter].name }}</h5>
-                            <p class="mb-0">Ultimo accesso alle: </p>
-                        </div>
-                    </div>
-                    <div class="active_user_icons">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-paperclip"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                </div>
-                <div class="chats">
-                    <div class="chat">
-                        <div class="actual_chat" v-for="message in contacts[counter].messages" :class="message.status == 'sent' ? 'sent' : 'received'">
-                            <p class="message mb-0">{{ message.text }}</p>  
-                            <p class="date mb-0">{{ message.date }}</p>  
-                        </div>
-                    </div>
-                </div>
-                <div class="input_chat_bar">
-                    <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
-                    <i class="fas fa-microphone"></i>
-                </div>
-
-        </main>
     </div>
-    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>

@@ -5,12 +5,20 @@
     box-sizing: border-box;
 }
 #root{
-    background: linear-gradient(180deg, #009688 19.65%, #DCDBD2 19.65%);
+    background: linear-gradient(to top, #DCDBD2 calc(100vh - 180px), #009688 calc(100vh - 180px));
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; 
+    padding: 90px 0px;
+    
+}
+.general_container{
+       display: flex;
+    padding: 90px 0px;
+       justify-content: center;
+       flex-wrap: nowrap;
+       align-items: center;
+       height: calc(100vh - 180px);
+    
 }
 .d_flex{
     display: flex;
@@ -19,32 +27,29 @@
 .sidebar{
     background-color: white;
     width: 300px;
-    position: fixed;
-    top: 50px;
-    left: 400px;
+    height: calc(100vh - 180px);
 }
 .top_sidebar{
     display: flex;
     background-color: rgba(234, 234, 234, 1);
-    padding: 20px 10px;
-    align-content: stretch;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 0px;
 }
 .central_sidebar{
     display: flex;
 }
 .down_sidebar{
     background-color: rgb(255, 255, 255);
-    height: 440px;
 }
 /* Main Section */
 .chat_section{
-    height: 700px;
     width: 800px;
-    position: fixed;
-    top: 50px;
-    left: 700px
+    height: calc(100vh - 180px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
 }
 .active_contact{
     display: flex;
@@ -62,9 +67,22 @@
     font-size: 1.5rem;
 }
 .chats{
-    height: 475px;
-    background-color: rgb(139, 3, 3);
-    background-image: url(../img/mine.jpg)
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: stretch;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    background-image: url(../img/mine.jpg);
+    background-size: contain;
+    padding-top: 30px;
+}
+.chat{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    height: calc(100vh - 390px);
 }
 .input_chat_bar{
     display: flex;
@@ -170,15 +188,14 @@
 .sent{
     background-color: rgba(213, 249, 186, 1);
     align-self: flex-end;
-    margin-top: 20px;
-    margin-right: 80px;
-    margin-bottom: 30px;
+    padding:0.5rem;
+    margin:0.5rem;
 }
 .received{
     background-color: white;
     align-self: flex-start;
-    margin-left: 90px;
-    margin-bottom: 30px;
+    padding:0.5rem;
+    margin:0.5rem;
 
 }
 .message{
@@ -195,7 +212,7 @@
     display: flex;
     flex-direction: column;
 }
-.chat{
-    display: flex;
-    flex-direction: column;
+
+.active{
+    background-color: lightgray;
 }
