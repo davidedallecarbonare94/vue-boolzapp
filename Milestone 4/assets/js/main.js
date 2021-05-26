@@ -8,6 +8,7 @@ let whatsapp = new Vue({
             data: {
                 counter: 0,
                 myMessages: '',
+                contactElement: '',
                 contacts: [{
                         name: 'Michele',
                         avatar: '_1',
@@ -125,17 +126,13 @@ let whatsapp = new Vue({
                 },
                 //funzione per filtrare
                 searchUser() {
-                    let input = document.getElementById("searchbar").value
-                    input = input.toLowerCase()
-                    let x = this.contacts[this.counter].status;
-
-                    for (i = 0; i < x; i++) {
-                        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-                            x[i].status = true;
+                    this.contacts.forEach(element => {
+                        if (element.name.toLowerCase().includes(this.contactElement.toLowerCase())) {
+                            element.visible = true;
                         } else {
-                            x[i].status = false;
+                            element.visible = false;
                         }
-                    }
+                    })
                 },
 
         }

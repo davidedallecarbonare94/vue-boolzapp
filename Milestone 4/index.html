@@ -52,14 +52,14 @@
                             <div class="search_bar">
                                 <div class="searchbar_border">
                                     <i class="fas fa-search"></i>
-                                    <input id="searchbar" type="text" placeholder="Cerca o inizia una nuova chat" @keyup.enter="searchUser()">
+                                    <input v-model="contactElement" id="searchbar" type="text" placeholder="Cerca o inizia una nuova chat" @keyup="searchUser()">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="down_sidebar">
                         <!-- lista contatti -->
-                        <div class="contact_names d_flex" v-for="(contact, index) in contacts" @click="selectUser(index)"
+                        <div class="contact_names d_flex" v-for="(contact, index) in contacts"  v-if="contact.visible === true" @click="selectUser(index)"
                             :class="counter === index ? 'active' : '' ">
                             <img class="user_logo" :src="'./assets/img/avatar' + contacts[index].avatar + '.jpg'"
                                 alt="avatar">
